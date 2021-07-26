@@ -1,18 +1,14 @@
 #include <iostream>
-#include <vector>
 #include <sstream>
-#include <iomanip>
-
-#include <iostream>
-
+#include <fstream>
 
 #include <boost/locale.hpp>
-#include <locale>
+// #include <locale>
 
 
 struct PARAMETERS {
     std::string fileName;
-}  app_param;
+}  g_param;
 
 
 
@@ -35,7 +31,7 @@ int main(int argc, char** argv)
     }
 
     std::string buffer;
-    std::ifstream fin( app_param.fileName.c_str() );
+    std::ifstream fin( g_param.fileName.c_str() );
 
 	if ( fin.is_open()) {
         while ( std::getline(fin, buffer) ) {
@@ -71,7 +67,7 @@ bool  valid_parameters(int argc, char** argv)
         return ( false );
     }
 
-    app_param.fileName =  argv[ 1 ];
+    g_param.fileName =  argv[ 1 ];
 
     return ( true );
 }

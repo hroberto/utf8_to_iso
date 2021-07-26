@@ -3,7 +3,7 @@
 
 #pathprj=$(shell dirname $(shell dirname `pwd`))
 pathprj=${PWD}
-dirAplicacao=$(pathprj)
+dirAplicacao=$(pathprj)/bin
 dirBiblioteca=$(pathprj)/lib
 
 nomeAplicacao=$(dirAplicacao)/utfToIso
@@ -43,7 +43,9 @@ else
 endif
 
 #Link das Bibliotecas
-LINK		= $(LIB_SYS)
+LINK		= $(LIB_SYS) \
+		-L${BASE_BOOST_LIBS} -lboost_filesystem -lboost_system -lboost_date_time -lboost_regex -lboost_thread -lboost_program_options -lboost_locale -lboost_chrono \
+
 
 .cpp.o:
 	@echo "Compilando >>> $<"
