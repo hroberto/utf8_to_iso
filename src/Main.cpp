@@ -74,9 +74,9 @@ bool  valid_parameters(int argc, char** argv)
 
 
 /**
- * \brief  Realiza a conversao do texto para ISO 8583, caso o texto seja em UTF8.
+ * \brief  Realiza a conversao do texto para ISO 8859-1, caso o texto seja em UTF8.
  * \param  textIn_  Texto de origem informado para conversao.
- * \return Texto em ISO-8583 
+ * \return Texto em ISO-8859-1 
  * \info   Caso o texto nao necessite de conversao, a mensagem de retorno sera identica a original.
  **/
 std::string transforme_utf_to_iso( const std::string & textIn_ )
